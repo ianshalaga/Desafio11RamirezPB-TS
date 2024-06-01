@@ -19,9 +19,9 @@ class SessionController {
 
   // @@@@
   async login(req: Request, res: Response) {
-    if (!req.user)
+    if (!req.customUser)
       return res.status(400).json(failureStatus("Error de credenciales."));
-    req.session.user = new CurrentUserDTO(req.user).currentUser;
+    req.session.user = new CurrentUserDTO(req.customUser).currentUser;
     res.status(200).json(successStatus);
   }
 
@@ -46,7 +46,7 @@ class SessionController {
 
   // @@@@
   async githubCallback(req: Request, res: Response) {
-    req.session.user = new CurrentUserDTO(req.user).currentUser;
+    req.session.user = new CurrentUserDTO(req.customUser).currentUser;
     res.redirect(productsRoute);
   }
 
