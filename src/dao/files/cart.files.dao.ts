@@ -1,6 +1,5 @@
-import { generateId } from "../../utils/functions";
 import Cart from "../../classes/Cart";
-import IdCart from "../../interfaces/IdCart";
+import { IdCart } from "../../interfaces/cart.interface";
 import CartProduct from "../../classes/CartProduct";
 import {
   readDataFromJsonFileAsyncPromises,

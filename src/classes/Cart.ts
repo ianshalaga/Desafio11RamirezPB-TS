@@ -1,5 +1,5 @@
 import CartProduct from "./CartProduct";
-import IdCart from "../interfaces/IdCart";
+import { IdCart } from "../interfaces/cart.interface";
 
 class Cart {
   products: CartProduct[];

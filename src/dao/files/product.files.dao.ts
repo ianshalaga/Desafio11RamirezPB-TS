@@ -1,7 +1,5 @@
-import IdProduct from "../../interfaces/IdProduct";
-import UpdateProduct from "../../interfaces/UpdateProduct";
+import { IdProduct, UpdateProduct } from "../../interfaces/product.interface";
 import Product from "../../classes/Product";
-import { generateId } from "../../utils/functions";
 import {
   readDataFromJsonFileAsyncPromises,
   writeDataIntoJsonFileAsyncPromises,

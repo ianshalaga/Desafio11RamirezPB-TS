@@ -3,11 +3,13 @@ import { productsModel } from "./models/product.mongodb.model";
 /** Types */
 import query from "../../types/query";
 /** Interfaces */
-import ProductDAO from "../../interfaces/ProductDAO";
-import Product from "../../interfaces/Product";
-import DbProduct from "../../interfaces/DbProduct";
-import UpdateProduct from "../../interfaces/UpdateProduct";
-import GetProduct from "../../interfaces/GetProduct";
+import {
+  ProductDAO,
+  Product,
+  DbProduct,
+  UpdateProduct,
+  GetProduct,
+} from "../../interfaces/product.interface";
 
 class ProductMongodbDAO implements ProductDAO {
   constructor() {}

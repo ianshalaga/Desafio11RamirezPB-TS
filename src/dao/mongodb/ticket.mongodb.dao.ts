@@ -1,9 +1,7 @@
 /** Model */
 import ticketsModel from "./models/ticket.mongodb.model";
 /** Interfaces */
-import TicketDAO from "../../interfaces/TicketDAO";
-import Ticket from "../../interfaces/Ticket";
-import DbTicket from "../../interfaces/DbTicket";
+import { TicketDAO, Ticket, DbTicket } from "../../interfaces/ticket.interface";
 
 class TicketMongodbDAO implements TicketDAO {
   constructor() {}

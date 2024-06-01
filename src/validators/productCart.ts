@@ -1,4 +1,4 @@
-import ProductCart from "../interfaces/ProductCart";
+import { ProductCart } from "../interfaces/product.interface";
 import { z } from "zod";
 import ErrorHandler from "../utils/ErrorHandler";
 import errorTypes from "../utils/errorTypes";

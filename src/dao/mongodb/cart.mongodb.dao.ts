@@ -1,10 +1,8 @@
 /** Model */
 import cartsModel from "./models/cart.mongodb.model";
 /** Interfaces */
-import CartDAO from "../../interfaces/CartDAO";
-import DbCart from "../../interfaces/DbCart";
-import Cart from "../../interfaces/Cart";
-import ProductCart from "../../interfaces/ProductCart";
+import { CartDAO, DbCart, Cart } from "../../interfaces/cart.interface";
+import { ProductCart } from "../../interfaces/product.interface";
 
 class CartMongodbDAO implements CartDAO {
   constructor() {}

@@ -1,5 +1,5 @@
-import UserSession from "../../interfaces/UserSession";
-import User from "../../interfaces/User";
+import { UserSession } from "../../interfaces/session.interface";
+import { User } from "../../interfaces/user.interface";
 
 export default class CurrentUserDTO {
   currentUser: UserSession;

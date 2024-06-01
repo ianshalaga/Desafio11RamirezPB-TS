@@ -1,5 +1,4 @@
-import UserSession from "../src/interfaces/UserSession";
-import AdminSession from "../src/interfaces/AdminSession";
+import { UserSession, AdminSession } from "../src/interfaces/session.interface";
 
 declare module "express-session" {
   interface Session {

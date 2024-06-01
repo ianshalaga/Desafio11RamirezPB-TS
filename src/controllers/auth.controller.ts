@@ -1,8 +1,8 @@
 import { Request } from "express";
 import { createHash, isValidPassword } from "../utils/passwordHashing";
 // Interfaces
-import DbCart from "../interfaces/DbCart";
-import dbUser from "../interfaces/dbUser";
+import { DbCart } from "../interfaces/cart.interface";
+import { DbUser } from "../interfaces/user.interface";
 // Services
 import { cartService, userService } from "../services/services";
 
@@ -13,7 +13,7 @@ class AuthController {
   async register(req: Request, username: string, password: string, done) {
     try {
       const { email, firstName, lastName, age, rol } = req.body;
-      const userExist: dbUser = await userService.getUserByEmail(email);
+      const userExist: DbUser = await userService.getUserByEmail(email);
       if (userExist) {
         console.log("El usuario ya existe");
         return done(null, false); // User exist. No error.
@@ -38,7 +38,7 @@ class AuthController {
   // @@@@
   async login(username: string, password: string, done) {
     try {
-      const user: dbUser = await userService.getUserByEmail(username);
+      const user: DbUser = await userService.getUserByEmail(username);
       if (!user) return done(null, false);
       const valid = isValidPassword(user, password);
       if (!valid) return done(null, false);
@@ -51,7 +51,7 @@ class AuthController {
   // @@@@
   async githubLogin(accessToken, refreshToken, profile, done) {
     try {
-      const user: dbUser = await userService.getUserByEmail(
+      const user: DbUser = await userService.getUserByEmail(
         profile._json.email
       );
       if (!user) {
@@ -76,14 +76,14 @@ class AuthController {
   }
 
   // @@@@
-  async serializeUser(user: dbUser, done) {
+  async serializeUser(user: DbUser, done) {
     done(null, user._id);
   }
 
   // @@@@
   async deserializeUser(id: string, done) {
     try {
-      let user: dbUser = await userService.getUserById(id);
+      let user: DbUser = await userService.getUserById(id);
       done(null, user);
     } catch (error) {
       done(error);

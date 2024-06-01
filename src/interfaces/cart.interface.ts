@@ -1,7 +1,21 @@
-import DbCart from "./DbCart";
-import ProductCart from "./ProductCart";
+import { ProductCart } from "./product.interface";
+import CartProduct from "../classes/CartProduct";
 
-export default interface CartDAO {
+export interface Cart {
+  products: ProductCart[];
+}
+
+export interface DbCart extends Cart {
+  _id: string;
+}
+
+export interface IdCart {
+  id: number;
+  products: CartProduct[];
+  [key: string]: number | CartProduct[];
+}
+
+export interface CartDAO {
   getAll(): Promise<DbCart[]>;
   create(): Promise<DbCart>;
   getById(id: string): Promise<DbCart>;

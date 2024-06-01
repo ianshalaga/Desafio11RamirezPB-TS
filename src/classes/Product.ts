@@ -1,4 +1,4 @@
-import IdProduct from "../interfaces/IdProduct";
+import { IdProduct } from "../interfaces/product.interface";
 
 class Product {
   title: string;

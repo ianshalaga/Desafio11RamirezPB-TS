@@ -5,10 +5,9 @@ import validateQueryParams from "../validators/queryParams";
 /** Services */
 import { cartService, productService } from "../services/services";
 // Interfaces
-import GetProduct from "../interfaces/GetProduct";
-import QueryParams from "../interfaces/QueryParams";
-import DbCart from "../interfaces/DbCart";
-import DbProduct from "../interfaces/DbProduct";
+import { GetProduct, DbProduct } from "../interfaces/product.interface";
+import { QueryParams } from "../interfaces/query.interface";
+import { DbCart } from "../interfaces/cart.interface";
 
 const PORT = config.port;
 

@@ -3,20 +3,19 @@ import {
   cartService,
   mailService,
   productService,
-  // smsService,
+  smsService,
   ticketService,
   userService,
 } from "../services/services";
 import { successStatus, failureStatus } from "../utils/statuses";
 // Interfaces
-import DbCart from "../interfaces/DbCart";
-import ProductCart from "../interfaces/ProductCart";
+import { DbCart } from "../interfaces/cart.interface";
+import { ProductCart, DbProduct } from "../interfaces/product.interface";
+import { DbUser } from "../interfaces/user.interface";
+import { Ticket } from "../interfaces/ticket.interface";
 // Validators
 import validateNumber from "../validators/number";
 import validateProductCart from "../validators/productCart";
-import DbProduct from "../interfaces/DbProduct";
-import Ticket from "../interfaces/Ticket";
-import dbUser from "../interfaces/dbUser";
 
 class CartController {
   constructor() {}
@@ -117,7 +116,7 @@ class CartController {
   async purchase(req: Request, res: Response) {
     try {
       const cid: string = req.params.cid;
-      const user: dbUser = await userService.getUserByCart(cid);
+      const user: DbUser = await userService.getUserByCart(cid);
       let amount: number = 0; // Total price
       const noPurchased: ProductCart[] = [];
       const stockless: string[] = [];

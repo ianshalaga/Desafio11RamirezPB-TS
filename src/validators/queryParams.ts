@@ -1,4 +1,4 @@
-import QueryParams from "../interfaces/QueryParams";
+import { QueryParams } from "../interfaces/query.interface";
 import { z } from "zod";
 
 const queryParamsSchema = z.object({

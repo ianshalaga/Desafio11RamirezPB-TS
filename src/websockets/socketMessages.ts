@@ -3,8 +3,7 @@ import { Server } from "socket.io";
 import { productService } from "../services/services";
 import messagesModel from "../dao/mongodb/models/message.mongodb.model";
 // Interfaces
-import Product from "../interfaces/Product";
-import GetProduct from "../interfaces/GetProduct";
+import { Product, GetProduct } from "../interfaces/product.interface";
 
 function socketMessages(socketServer: Server) {
   const messages = [];

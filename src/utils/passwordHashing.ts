@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import User from "../interfaces/User";
+import { User } from "../interfaces/user.interface";
 
 export function createHash(password: string) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(10));

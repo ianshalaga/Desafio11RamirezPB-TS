@@ -1,7 +1,7 @@
 import ErrorHandler from "../utils/ErrorHandler";
 import productInfoError from "../utils/errors/productInfo.error";
 import errorTypes from "../utils/errorTypes";
-import Product from "../interfaces/Product";
+import { Product } from "../interfaces/product.interface";
 import { z } from "zod";
 
 const productSchema = z.object({

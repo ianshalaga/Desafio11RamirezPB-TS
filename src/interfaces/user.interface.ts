@@ -11,26 +11,13 @@ export interface User extends UserLogin {
   cart: string;
 }
 
-export interface dbUser extends User {
+export interface DbUser extends User {
   _id: string;
 }
 
-export interface UserSession {
-  name: string;
-  email: string;
-  age: number;
-  rol: string;
-  cart: string;
-}
-
-export interface AdminSession {
-  email: string;
-  rol: string;
-}
-
 export interface UserDAO {
-  getById(id: string): Promise<dbUser>;
-  getByEmail(email: string): Promise<dbUser>;
-  create(newUser: User): Promise<dbUser>;
-  getByCart(cartId: string): Promise<dbUser>;
+  getById(id: string): Promise<DbUser>;
+  getByEmail(email: string): Promise<DbUser>;
+  create(newUser: User): Promise<DbUser>;
+  getByCart(cartId: string): Promise<DbUser>;
 }

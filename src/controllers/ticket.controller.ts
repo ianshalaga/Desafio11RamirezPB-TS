@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ticketService } from "../services/services";
 import { successStatus, failureStatus } from "../utils/statuses";
-import Ticket from "../interfaces/Ticket";
+import { Ticket } from "../interfaces/ticket.interface";
 
 class CartController {
   constructor() {}

@@ -1,4 +1,4 @@
-import ProductCart from "../interfaces/ProductCart";
+import { ProductCart } from "../interfaces/product.interface";
 import CartMongodbDAO from "../dao/mongodb/cart.mongodb.dao";
 
 export default class CartService {

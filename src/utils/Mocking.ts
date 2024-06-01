@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import DbProduct from "../interfaces/DbProduct";
+import { DbProduct } from "../interfaces/product.interface";
 
 class Mocking {
   constructor() {}

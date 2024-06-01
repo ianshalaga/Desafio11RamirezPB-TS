@@ -1,5 +1,5 @@
 import UserMongodbDAO from "../dao/mongodb/user.mongodb.dao";
-import User from "../interfaces/User";
+import { User } from "../interfaces/user.interface";
 
 export default class UserService {
   dao: UserMongodbDAO;

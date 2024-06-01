@@ -1,4 +1,4 @@
-import DbProduct from "../interfaces/DbProduct";
+import { DbProduct } from "../interfaces/product.interface";
 import mocking from "../utils/Mocking";
 
 export default class MockingService {

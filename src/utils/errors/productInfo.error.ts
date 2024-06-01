@@ -1,4 +1,4 @@
-import Product from "../../interfaces/Product";
+import { Product } from "../../interfaces/product.interface";
 
 function productInfoError(product: Product): string {
   return `Error when creating the product. Expected arguments:

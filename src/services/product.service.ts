@@ -1,8 +1,7 @@
 import ProductMongodbDAO from "../dao/mongodb/product.mongodb.dao";
 import query from "../types/query";
 /** Interfaces */
-import Product from "../interfaces/Product";
-import UpdateProduct from "../interfaces/UpdateProduct";
+import { Product, UpdateProduct } from "../interfaces/product.interface";
 
 export default class ProductService {
   dao: ProductMongodbDAO;

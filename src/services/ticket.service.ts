@@ -1,5 +1,5 @@
 import TicketMongodbDAO from "../dao/mongodb/ticket.mongodb.dao";
-import Ticket from "../interfaces/Ticket";
+import { Ticket } from "../interfaces/ticket.interface";
 
 export default class TicketService {
   dao: TicketMongodbDAO;

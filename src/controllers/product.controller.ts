@@ -2,10 +2,12 @@ import { Request, Response } from "express";
 import { productService } from "../services/services";
 import { successStatus, failureStatus } from "../utils/statuses";
 // Interfaces
-import QueryParams from "../interfaces/QueryParams";
-import GetProduct from "../interfaces/GetProduct";
-import Product from "../interfaces/Product";
-import UpdateProduct from "../interfaces/UpdateProduct";
+import { QueryParams } from "../interfaces/query.interface";
+import {
+  GetProduct,
+  Product,
+  UpdateProduct,
+} from "../interfaces/product.interface";
 // Validators
 import validateQueryParams from "../validators/queryParams";
 import validateUpdateProduct from "../validators/updateProduct";

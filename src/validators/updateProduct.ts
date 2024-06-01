@@ -1,4 +1,4 @@
-import UpdateProduct from "../interfaces/UpdateProduct";
+import { UpdateProduct } from "../interfaces/product.interface";
 import { z } from "zod";
 
 const updateProductSchema = z

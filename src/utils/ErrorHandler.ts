@@ -1,4 +1,4 @@
-import CustomError from "../interfaces/CustomError";
+import { CustomError } from "../interfaces/error.interface";
 
 export default class ErrorHandler {
   static customError(
