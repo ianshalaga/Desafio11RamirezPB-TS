@@ -6,7 +6,7 @@ Onceavo desafío entregable del curso de Programación Backend de CoderHouse.
 
 Basado en nuestro proyecto principal, implementar un **logger**.
 
-- Primero, definir un sistema de niveles que tenga la siguiente prioridad (de menor a mayor): **debug**, **http**, **info**, **warning**, **error** y **fatal**.
+- [x] Primero, definir un sistema de niveles que tenga la siguiente prioridad (de menor a mayor): **debug**, **http**, **info**, **warning**, **error** y **fatal**.
 - Después implementar un **logger** para desarrollo y un **logger** para producción. El **logger** de desarrollo deberá **loggear** a partir del nivel **debug**, sólo en consola. Sin embargo, el **logger** del entorno productivo debería **loggear** sólo a partir de nivel **info**. Además, el **logger** deberá enviar en un transporte de archivos, a partir del nivel de error, con nombre **errors.log**.
 - Agregar **logs** de valor alto en los puntos importantes de tu servidor (errores, advertencias, etc) y modificar los **console.log()** habituales que tenemos para que muestren todo a partir de **winston**.
 - Crear un **endpoint /loggerTest** que permita probar todos los **logs**.
@@ -96,6 +96,10 @@ Enlace al repositorio de **GitHub** con el proyecto completo, sin la carpeta de 
 - `npm i @faker-js/faker`
 
 > - **@faker-js/faker** es una biblioteca de **JavaScript** diseñada para generar datos falsos o simulados (**mock data**).
+
+- `npm i winston`
+
+> - **winston** es una biblioteca de registro (**logging**) para **node.js** que permite registrar mensajes en diferentes niveles de severidad y en múltiples destinos (consola, archivos, bases de datos, etc).
 
 ## devDependencies
 
