@@ -1,12 +1,18 @@
 import dotenv from "dotenv";
 import { Command } from "commander";
+import Environment from "../types/environment.enum";
 
 const program = new Command();
 program.option("--dao <dao>", "Data Access Object Selector", "mongodb").parse();
 const dao: string = program.opts().dao;
 
+const ENVIRONMENT: string = Environment.development;
+
 dotenv.config({
-  path: "./.env.development",
+  path:
+    ENVIRONMENT === Environment.production
+      ? "./.env.production"
+      : "./.env.development",
 });
 
 export default {
@@ -35,4 +41,6 @@ export default {
   twilioAccountSid: process.env.TWILIO_ACCOUNT_SID,
   twilioAuthToken: process.env.TWILIO_AUTH_TOKEN,
   twilioPhoneNumber: process.env.TWILIO_PHONE_NUMBER,
+  // Environment
+  nodeEnv: process.env.NODE_ENV,
 };

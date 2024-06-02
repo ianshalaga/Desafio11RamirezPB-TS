@@ -13,8 +13,9 @@ class SessionController {
 
   // @@@@
   async registerFail(req: Request, res: Response) {
-    console.log("error");
-    res.json(failureStatus("Error al registrar el usuario."));
+    const message: string = "Error al registrar el usuario.";
+    req.logger.error(message);
+    res.json(failureStatus(message));
   }
 
   // @@@@

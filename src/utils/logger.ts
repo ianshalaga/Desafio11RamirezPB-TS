@@ -1,5 +1,6 @@
 import winston from "winston";
 import { CustomLogger } from "../types/logger.type";
+import config from "../config/env.config";
 
 const customLevelOptions = {
   levels: {
@@ -22,13 +23,39 @@ const customLevelOptions = {
 
 winston.addColors(customLevelOptions.colors);
 
-const logger = winston.createLogger({
+const loggerFormat = winston.format.printf(({ level, message, timestamp }) => {
+  return `${timestamp} [${level}]: ${message}`;
+});
+
+// DEVELOPMENT
+const loggerDevelopment = winston.createLogger({
   levels: customLevelOptions.levels,
   format: winston.format.combine(
     winston.format.colorize({ all: true }),
-    winston.format.simple()
+    winston.format.timestamp(),
+    loggerFormat
   ),
-  transports: [new winston.transports.Console()],
+  transports: [new winston.transports.Console({ level: "debug" })],
 });
+
+// PRODUCTION
+const loggerProduction = winston.createLogger({
+  levels: customLevelOptions.levels,
+  format: winston.format.combine(
+    winston.format.colorize({ all: true }),
+    winston.format.timestamp(),
+    loggerFormat
+  ),
+  transports: [
+    new winston.transports.Console({ level: "info" }),
+    new winston.transports.File({
+      filename: "./src/data/errors.log",
+      level: "error",
+    }),
+  ],
+});
+
+const logger =
+  config.nodeEnv === "production" ? loggerProduction : loggerDevelopment;
 
 export default logger as CustomLogger;

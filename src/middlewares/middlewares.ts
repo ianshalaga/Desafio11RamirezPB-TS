@@ -9,8 +9,10 @@ import cors from "cors";
 import { dbURI } from "../config/mongoDb.config";
 import initializePassport from "../config/passport.config";
 import config from "../config/env.config";
+// Middlewares
 import errorHandler from "./errorHandler";
-
+import addLogger from "./logger";
+// Utils
 import { rootPath } from "../utils/paths";
 
 const middlewares = Router();
@@ -41,5 +43,7 @@ middlewares.use(passport.session());
 middlewares.use(cors()); // Cors
 
 middlewares.use(errorHandler); // Errors handling
+
+middlewares.use(addLogger); // Logger
 
 export default middlewares;
